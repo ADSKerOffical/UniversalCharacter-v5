@@ -1,0 +1,271 @@
+local plr = game.Players.LocalPlayer
+tool = Instance.new("Tool",plr.Backpack)
+tool.Name = "Knife"
+tool.GripPos = Vector3.new(0,-1,0)
+handle = Instance.new("Part",tool)
+handle.Name = "Handle"
+mesh = Instance.new("SpecialMesh",handle)
+mesh.MeshId = "http://www.roblox.com/asset?id=121944778"
+mesh.TextureId = "rbxassetid://121944805"
+mesh.Scale = Vector3.new(1,1,1)
+
+tool.Activated:Connect(function()
+    local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://96559161"
+local k = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1)
+
+Spooky = Instance.new("Sound", handle)
+Spooky.Name = "Budgie Hub"
+Spooky.SoundId = "rbxassetid://144011185"
+Spooky.Volume = 1
+Spooky.PlaybackSpeed = 1
+Spooky.Looped = false
+Spooky:Play()
+end)
+
+handle.Touched:Connect(function(hit)
+    local humanoid = hit.Parent:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        humanoid:TakeDamage(1)
+    end
+end)
+
+local plr = game.Players.LocalPlayer
+tool = Instance.new("Tool",plr.Backpack)
+tool.Name = "Thousand cuts"
+tool.GripPos = Vector3.new(0,-1,0)
+handle = Instance.new("Part",tool)
+handle.Name = "Handle"
+mesh = Instance.new("SpecialMesh",handle)
+mesh.MeshId = "http://www.roblox.com/asset?id=121944778"
+mesh.TextureId = "rbxassetid://121944805"
+mesh.Scale = Vector3.new(1,1,1)
+
+tool.Activated:Connect(function()
+    local speaker = game.Players.LocalPlayer
+    speaker.Character.Humanoid.WalkSpeed = 35
+local Anim = Instance.new("Animation")
+     Anim.AnimationId = "rbxassetid://27432686"
+     local bruh = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+bruh:Play()
+bruh:AdjustSpeed(0)
+speaker.Character.Animate.Disabled = true
+
+tool.Grip = CFrame.Angles(1.35, math.rad(0), 0)
+local spinSpeed = 20
+local Spin = Instance.new("BodyAngularVelocity")
+Spin.Name = "Spinning"
+Spin.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
+Spin.MaxTorque = Vector3.new(0, math.huge, 0)
+Spin.AngularVelocity = Vector3.new(0,spinSpeed,0)
+
+wait(6)
+speaker.Character.Humanoid.WalkSpeed = 16
+speaker.Character.Animate.Disabled = false
+for i,v in pairs(speaker.Character:GetDescendants()) do
+  if v:IsA("BodyVelocity") or v:IsA("BodyGyro") or v:IsA("RocketPropulsion") or v:IsA("BodyThrust") or v:IsA("BodyAngularVelocity") or v:IsA("AngularVelocity") or v:IsA("BodyForce") or v:IsA("VectorForce") or v:IsA("LineForce") then
+   v:Destroy()
+  end
+ end
+ local Humanoid = game.Players.LocalPlayer.Character.Humanoid
+local ActiveTracks = Humanoid:GetPlayingAnimationTracks()
+for _,v in pairs(ActiveTracks) do
+     v:Stop()
+end
+tool.Grip = CFrame.Angles(0, math.rad(0), 0)
+tool.GripPos = Vector3.new(0,-1,0)
+end)
+
+handle.Touched:Connect(function(hit)
+    local humanoid = hit.Parent:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        humanoid:TakeDamage(3)
+    end
+end)
+
+local plr = game.Players.LocalPlayer
+tool = Instance.new("Tool",plr.Backpack)
+tool.Name = "Throwing Knife"
+tool.GripPos = Vector3.new(0,-1,0)
+handle = Instance.new("Part",tool)
+handle.Name = "Handle"
+mesh = Instance.new("SpecialMesh",handle)
+mesh.MeshId = "http://www.roblox.com/asset?id=121944778"
+mesh.TextureId = "rbxassetid://121944805"
+mesh.Scale = Vector3.new(1,1,1)
+
+tool.Activated:Connect(function()
+    local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://186934753"
+local k = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1)
+
+player = game.Players.LocalPlayer
+part = Instance.new("Part", game.Workspace)
+part.Name = "BurningPart"
+part.Size = Vector3.new(1, 1, 1)
+part.Color = Color3.fromRGB(255, 255, 255)
+part.Anchored = false
+part.CanCollide = false
+part.CFrame = CFrame.new(player.Character.Head.Position) + Vector3.new(0,1,0)
+    part.Velocity = player.Character.Head.CFrame.LookVector * 400
+mesh = Instance.new("SpecialMesh",part)
+mesh.MeshId = "http://www.roblox.com/asset?id=121944778"
+mesh.TextureId = "rbxassetid://121944805"
+mesh.Scale = part.Size
+
+part.Touched:Connect(function(hit)
+        if hit.Parent:FindFirstChild("Humanoid") and hit.Parent ~= game.Players.LocalPlayer.Character then
+            humanoid = hit.Parent:FindFirstChild("Humanoid")
+            humanoid:TakeDamage(10)
+       part:Destroy()
+        end
+    end)
+end)
+
+local plr = game.Players.LocalPlayer
+tool = Instance.new("Tool",plr.Backpack)
+tool.Name = "Seal of Death"
+tool.GripPos = Vector3.new(0,-1,0)
+handle = Instance.new("Part",tool)
+handle.Name = "Handle"
+mesh = Instance.new("SpecialMesh",handle)
+mesh.MeshId = "http://www.roblox.com/asset?id=121944778"
+mesh.TextureId = "rbxassetid://121944805"
+mesh.Scale = Vector3.new(1,1,1)
+
+tool.Activated:Connect(function()
+    local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://186934753"
+local k = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1)
+
+player = game.Players.LocalPlayer
+for i = 1, 50 do
+part = Instance.new("Part", game.Workspace)
+part.Name = "BurningPart"
+part.Size = Vector3.new(1, 1, 1)
+part.Color = Color3.fromRGB(255, 255, 255)
+part.Anchored = false
+part.CanCollide = false
+part.CFrame = CFrame.new(player.Character.Head.Position) + Vector3.new(math.random(-10,10),1,0)
+    part.Velocity = player.Character.Head.CFrame.LookVector * 400
+mesh = Instance.new("SpecialMesh",part)
+mesh.MeshId = "http://www.roblox.com/asset?id=121944778"
+mesh.TextureId = "rbxassetid://121944805"
+mesh.Scale = part.Size
+
+part.Touched:Connect(function(hit)
+        if hit.Parent:FindFirstChild("Humanoid") and hit.Parent ~= game.Players.LocalPlayer.Character then
+            humanoid = hit.Parent:FindFirstChild("Humanoid")
+            humanoid:TakeDamage(10)
+       part:Destroy()
+        end
+    end)
+ end
+end)
+
+local tool = Instance.new("Tool")
+tool.Name = "Summon a monster"
+tool.RequiresHandle = false
+
+tool.Activated:Connect(function()
+  local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://167434460"
+local k = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1)
+wait(0.5)
+k:AdjustSpeed(0)
+   wait(5)
+Spooky = Instance.new("Sound", game.Workspace)
+Spooky.Name = "Spooky"
+Spooky.SoundId = "rbxassetid://429459101"
+Spooky.Volume = 1
+Spooky.PlaybackSpeed = 1
+Spooky.Looped = false
+Spooky:Play()
+wait(2)
+k:Stop()
+assetId = tonumber(13616911371)
+if not assetId then
+    warn("Invalid asset ID")
+    return
+end
+
+user = game.Players.LocalPlayer
+model = game:GetObjects("rbxassetid://" .. assetId)[1]
+model.Parent = workspace
+humanoid = model:FindFirstChildOfClass("Humanoid")
+if not humanoid then
+    humanoid = Instance.new("Humanoid")
+    humanoid.Name = "Humanoid"
+    humanoid.Parent = model
+end
+model.Name = "Hell's Assistant"
+humanoid.Health = 10000
+humanoid.WalkSpeed = 50
+humanoid.JumpPower = 50
+model:MakeJoints()
+model:MoveTo(game.Workspace[user.Name].Torso.Position + Vector3.new(0, 0, 0))
+
+function findNearestPlayer()
+    nearestPlayer = nil
+    nearestDistance = math.huge
+
+    for _, player in pairs(game.Players:GetPlayers()) do
+        if player ~= user and player.Character and player.Character:FindFirstChildOfClass("Humanoid") then
+            local distance = (player.Character.PrimaryPart.Position - model:GetPrimaryPartCFrame().Position).Magnitude
+            if distance < nearestDistance then
+                nearestPlayer = player
+                nearestDistance = distance
+            end
+        end
+    end
+
+    return nearestPlayer
+end
+
+function followPlayer()
+    nearestPlayer = findNearestPlayer()
+    if nearestPlayer and nearestPlayer.Character and nearestPlayer.Character:FindFirstChildOfClass("Humanoid") then
+        humanoid.WalkSpeed = 50
+        humanoid:MoveTo(nearestPlayer.Character.PrimaryPart.Position)
+        humanoid.MoveToFinished:Wait()
+    end
+end
+
+function wander()
+    destination = Vector3.new(math.random(-30, 30), 0, math.random(-30, 30))
+    humanoid.WalkSpeed = 16
+    humanoid:MoveTo(destination)
+    humanoid.MoveToFinished:Wait()
+end
+
+function checkPlayerDistance()
+    if findNearestPlayer() then
+        followPlayer()
+    else
+        wander()
+    end
+end
+
+function onTouch(hit)
+    if hit.Parent and hit.Parent:FindFirstChildOfClass("Humanoid") and hit.Parent ~= user.Character then
+        hit.Parent:FindFirstChildOfClass("Humanoid"):TakeDamage(10)
+    end
+end
+
+humanoid.Touched:Connect(onTouch)
+
+while true do
+    checkPlayerDistance()
+    task.wait()
+end
+end)
+
+tool.Parent = game.Players.LocalPlayer.Backpack
